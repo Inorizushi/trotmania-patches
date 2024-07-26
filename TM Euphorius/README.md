@@ -1,0 +1,1 @@
+* Patches all MusicWheelItem actors to have checks to fix lag.
