@@ -7,7 +7,11 @@ local t = Def.ActorFrame{
 			if params.Type == "SectionCollapsed" then
 				local group = params.Text;
 				if group then
-					self:LoadFromSongGroup(group);
+					if SONGMAN:GetSongGroupBannerPath(params.Text) ~= "" then
+						self:Load(SONGMAN:GetSongGroupBannerPath(params.Text))
+					else
+						self:Load( THEME:GetPathG("Group jacket","fallback") );
+					end
 				else
 					-- fallback
 					self:Load( THEME:GetPathG("Group jacket","fallback") );
